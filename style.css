@@ -1,0 +1,249 @@
+/*  genel css degiskenleri*/
+
+:root {
+  --maincolor: #669cf4;
+  --background: #35424a;
+  --white: #f4f4f4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  
+}
+
+body {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  flex: 1;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* header - start */
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  background-color: var(--background);
+  color: var(--white);
+
+  padding-top: 30px;
+  border-bottom: var(--maincolor) solid 5px;
+}
+
+header a {
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+header ul {
+  list-style-type: none;
+}
+
+header li {
+  float: left;
+  display: inline;
+  padding: 0 20px;
+}
+
+header #branding h1 {
+  margin: 0;
+}
+
+header .highlight,
+header .current a {
+  color: var(--maincolor);
+  font-weight: bold;
+}
+
+header nav {
+  float: right;
+}
+/* header - end */
+
+/* showcase - start */
+#showcase {
+  background: url(./img/showcase.jpg) no-repeat 0 -200px;
+  min-height: 400px;
+  text-align: center;
+  color: var(--white);
+  display: flex;
+}
+
+#showcase h1 {
+  font-size: 55px;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+
+#showcase p {
+  font-size: 20px;
+}
+
+#newsletter {
+  background-color: var(--background);
+  color: var(--white);
+  padding: 15px;
+}
+
+#newsletter .container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+#newsletter h1 {
+  float: left;
+}
+
+#newsletter form {
+  float: right;
+  margin-top: 15px;
+}
+
+#newsletter input {
+  height: 40px;
+  width: 250px;
+  padding: 10px;
+}
+
+.button_1 {
+  height: 40px;
+  background-color: var(--maincolor);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: var(--white);
+  padding: 0 20px;
+}
+/* showcase - end */
+/* boxes - start */
+#boxes {
+  margin-top: 20px;
+}
+
+#boxes .box {
+  float: left;
+  width: 30%;
+  padding: 10px;
+  text-align: center;
+}
+
+#boxes .box img {
+  width: 100px;
+}
+/* boxes - end */
+
+/* services - start */
+ul#services li {
+  background-color: #e6e6e6;
+  border: ccc solid 1px;
+  list-style-type: none;
+  padding: 20px;
+  margin-bottom: 5px;
+}
+
+.quote div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+/* services - end */
+
+/* footer - start */
+footer {
+  background-color: var(--maincolor);
+  padding: 15px;
+  color: var(--white);
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+  margin: 0;
+}
+/* footer - end */
+
+/* aside side - start */
+.dark {
+  background: var(--background);
+  padding: 15px;
+  color: var(--white);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#sidebar {
+  float: right;
+  width: 30%;
+  margin-top: 10px;
+}
+
+article#main-col {
+  float: left;
+  width: 60%;
+}
+/* aside side - end */
+
+/* media queries */
+@media screen and (max-width: 800px) {
+  article#main-col,
+  aside#sidebar,
+  header nav {
+    /* Kapsayici icindeki 2 elementten birine float verirsek diger elementi umursamadan kendisini sag veya sola yaslayacaktir. Responsive yapabilmek icin her ikisini de kaldirmak gerekiyor. */
+    float: none;
+    width: 100%;
+  }
+
+  header #branding h1 {
+    text-align: center;
+  }
+
+  header .container {
+    flex-direction: column;
+    justify-content: none;
+    align-items: none;
+    width: 100%;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  #newsletter h1 {
+    float: none;
+  }
+
+  #newsletter for {
+    float: none;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  #newsletter .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
